@@ -1,0 +1,168 @@
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+C:\Users\quangduyvo\Desktop\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\ISC_TT\Back End\Moodle\Week 6\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+D:\Quoc\ISC\Custom\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+D:\Quoc\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+C:\Users\isc\Documents\GitHub\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+C:\OneDrive\PROJECT\Quản lý thông tin tuyển sinh SaigonTech\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\ISC_TT\ON-JOB\ISCManage\Project\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+C:\Users\quangduyvo\Desktop\SaiGonTech\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\DoAn\SaigontechManage\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.deps.json
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.json
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.runtimeconfig.dev.json
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\bin\Debug\netcoreapp2.2\QLHocVien.pdb
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csprojAssemblyReference.cache
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.csproj.CoreCompileInputs.cache
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorAssemblyInfo.cs
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfoInputs.cache
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.AssemblyInfo.cs
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.RazorTargetAssemblyInfo.cache
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.dll
+D:\D15HT02\HK2 - 4\BaoCaoDoAnTN\BaoCaoTN\SaigonTech_API_byQuoc\QLHocVien\QLHocVien\obj\Debug\netcoreapp2.2\QLHocVien.pdb

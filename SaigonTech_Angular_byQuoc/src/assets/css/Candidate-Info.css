@@ -1,0 +1,12 @@
+.content-main {
+  margin-left: 14px;
+  border-left: 1px solid #f2f2f2;
+}
+
+#inputhomephone {
+  display: inline;
+}
+
+label[for="inputhomephone"] {
+  width: 100px;
+}

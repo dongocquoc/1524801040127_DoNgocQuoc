@@ -1,0 +1,284 @@
+<div class="container-scroller w-100">
+  <!-- partial:partials/_navbar.html -->
+  <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+      <a class="navbar-brand brand-logo" href="../../index.html">
+        <img src="/assets/images/logo.svg" alt="logo" />
+      </a>
+      <a class="navbar-brand brand-logo-mini" href="../../index.html">
+        <img src="/assets/images/logo-mini.svg" alt="logo" />
+      </a>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center">
+      <ul class="navbar-nav navbar-nav-right">
+        <li class="nav-item dropdown d-none d-xl-inline-block">
+          <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+            <span class="profile-text">{{user.userName}}</span>
+            <img class="img-xs rounded-circle" [src]="user.imagePath" alt="Profile image">
+          </a>
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+            <a class="dropdown-item p-0">
+              <div class="d-flex border-bottom">
+                <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                  <i class="mdi mdi-bookmark-plus-outline mr-0 text-gray"></i>
+                </div>
+                <div class="py-3 px-4 d-flex align-items-center justify-content-center border-left border-right">
+                  <i class="mdi mdi-account-outline mr-0 text-gray"></i>
+                </div>
+                <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                  <i class="mdi mdi-alarm-check mr-0 text-gray"></i>
+                </div>
+              </div>
+            </a>
+            <!-- <a class="dropdown-item mt-2" data-toggle="modal" data-target="#ManagementAccoutModal"
+              style="cursor: pointer">
+              Manage Accounts
+            </a> -->
+            <a class="dropdown-item" (click)="showModalChangePassword()" style="cursor: pointer">
+              Change Password
+            </a>
+            <!-- <a class="dropdown-item" style="cursor: pointer">
+              Check Inbox
+            </a> -->
+            <a class="dropdown-item" (click)="logOut()" style="cursor: pointer">
+              Sign Out
+            </a>
+          </div>
+        </li>
+      </ul>
+      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+        data-toggle="offcanvas">
+        <span class="mdi mdi-menu"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- partial -->
+  <div class="container-fluid page-body-wrapper">
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item nav-profile">
+          <div class="nav-link">
+            <div class="user-wrapper">
+              <div class="profile-image">
+                <img class="img-xs rounded-circle" [src]="user.imagePath" alt="Profile image">
+              </div>
+              <div class="text-wrapper">
+                <p class="profile-name">{{user.userName}}</p>
+                <div>
+                  <small class="designation text-muted">Manager</small>
+                  <span class="status-indicator online"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#Candidate" aria-expanded="false" aria-controls="auth">
+            <i class="menu-icon mdi mdi-table"></i>
+            <span class="menu-title">About Candidate</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="Candidate">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/education"> Education </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/document"> Document </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/candidate"> Candidate </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#Management" aria-expanded="false"
+            aria-controls="Management">
+            <i class="menu-icon mdi mdi-table"></i>
+            <span class="menu-title">Managementt</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="Management">
+            <ul class="nav flex-column sub-menu">
+              <!-- <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/parameter"> Parameter </a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/year"> Year </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/semester"> Semester </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/catalog"> Catalog </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/intake"> Intake </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/address"> Address </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/major"> Major </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/candidatetype"> Candidate Type </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " routerLink="/dashboard/stage"> Stage </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#Admission" aria-expanded="false" aria-controls="auth">
+            <i class="menu-icon mdi mdi-table"></i>
+            <span class="menu-title">Admission</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="Admission">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/examsubject"> Exam Subject </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/scoreofexamsubject"> Passing Score Subject </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard/stagedetail"> Assign Candidate To Stage </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item " [style.visibility]=" statusClaim == '' ?  'hidden' : 'visible' ">
+          <a class="nav-link" data-toggle="collapse" href="#User" aria-expanded="false" aria-controls="User">
+            <i class="menu-icon mdi mdi-table"></i>
+            <a class="nav-link" routerLink="/dashboard/user"> User </a>
+          </a>
+          <div class="collapse" id="User"></div>
+        </li>
+      </ul>
+    </nav>
+    <!-- content-wrapper ends -->
+    <div class="main-panel">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+</div>
+<footer class="footer">
+  <div class="container-fluid clearfix">
+    <p class="footer-text text-center">copyright © 2018 Bootstrapdash. All rights reserved.</p>
+  </div>
+</footer>
+
+<!--START: MODAL MANAGEMENT ACCOUNT-->
+
+<div class="modal fade" id="ManagementAccoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Account & Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <img class="img-xs rounded" [src]="user.imagePath" alt="Profile image" height="100px">
+            </div>
+            <div class="col">
+              <label for="name" class="col-form-label">Name:</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+          </div>
+          <!-- <div class="form-row">
+            <div class="col">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" id="phone" placeholder="Phone number" formControlName="phone">
+              <span *ngIf="phone.invalid && ( phone.touched)" class=" text-danger">
+                <span *ngIf="phone.errors.required">
+                  Phone is required.
+                </span>
+                <span *ngIf="phone.errors.minlength">
+                  Phone is minLength 10 character
+                </span>
+
+              </span>
+            </div>
+            <div class="col">
+              <label for="name">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="Email Adress" formControlName="email">
+              <span *ngIf="email.invalid && ( email.touched)" class=" text-danger">
+                <span *ngIf="email.errors.required">
+                  Email is required.
+                </span>
+              </span>
+            </div>
+          </div> -->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END: MODAL MANAGEMENT ACCOUNT-->
+
+<!--START: MODAL CHANGE PASSWORD-->
+<div bsModal #ModalChangePassword="bs-modal" class="modal fade" id="ModalChangePassword" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="changePassword">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" (click)="close()">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="col-md-8 offset-md-2">
+              <label for="currentPassword" class="col-form-label">Current Password:</label>
+              <input type="password" class="form-control" id="currentPassword" name="currrentpassword"
+                [(ngModel)]="currentpassword">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-8 offset-md-2">
+              <label for="newPassword" class="col-form-label">New Password:</label>
+              <input type="password" class="form-control" id="newPassword" name="newpassword" [(ngModel)]="newpassword">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-8 offset-md-2">
+              <label for="confirmPassword" class="col-form-label">Confirm Password:</label>
+              <input type="password" class="form-control" id="confirmPassword" name="confirmpassword"
+                [(ngModel)]="confirmpassword">
+            </div>
+          </div>
+          <div class="text-block text-center my-3">
+            <p class="text-danger">{{message}}</p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="changePassword()">Change</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END: MODAL CHANGE PASSWORD-->

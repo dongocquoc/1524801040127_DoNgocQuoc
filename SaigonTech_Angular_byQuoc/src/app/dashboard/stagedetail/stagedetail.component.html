@@ -1,0 +1,299 @@
+<div class="card">
+  <div class="card-header text-dark">
+    Assign Candidate To Stage
+    <div class="ml-auto d-inline float-right">
+      <button type="button" class="btn btn-primary btn-sm ml-auto" (click)="ShowModalAdd()">Add</button>
+    </div>
+
+    <!-- add -->
+    <div bsModal #modalAdd="bs-modal" class="modal fade" id="addStageDetail" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New Stage Detail</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputStageName">Stage Name</label>
+                <select name="inputstagechoose" [(ngModel)]="stage.id" id="inputstagechoose" class="form-control"
+                  disabled>
+                  <option *ngFor="let stage of stages" [value]="stage.id" selected>{{stage.stageName}}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputInterview">Interview</label>
+                <input type="text" class="form-control mb-2" id="inputInterview" name="inputInterview" [(ngModel)]="stagedetail.interview"
+                  placeholder="Enter begin interview">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputMajor">Major</label>
+                <select (change)="changeMajorAdd()" name="inputMajor" [(ngModel)]="major.id" id="inputMajor" class="form-control">
+                  <option *ngFor="let major of majors" value="{{major.id}}" selected>{{major.majorName}}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputSubject">Subject</label>
+                <select name="inputSubject" [(ngModel)]="subject.id" id="inputSubject" class="form-control">
+                  <option *ngFor="let subject of subjects" value="{{subject.id}}" selected>{{subject.examName}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputStarTime">Star Time</label>
+                <input type="text" class="form-control mb-2" id="inputStarTime" name="inputStarTime" [(ngModel)]="stagedetail.starTime">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEndTime">End Time</label>
+                <input type="text" class="form-control mb-2" id="inputEndTime" [(ngModel)]="stagedetail.endTime" name="inputEndTime">
+              </div>
+            </div>
+            <div class="text-block text-center my-3">
+              <p class="text-danger">{{message}}</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-success" (click)="add()">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- edit -->
+    <div bsModal #modalEdit="bs-modal" class="modal fade" id="editStageDetail" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Stage</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputStageName">Stage Name</label>
+                <select name="inputstagechoose" [(ngModel)]="stagedetail.stage_ID" id="inputstagechoose" class="form-control"
+                disabled>
+                  <option *ngFor="let stage of stages" [value]="stage.id" selected>{{stage.stageName}}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputInterview">Interview</label>
+                <input type="text" class="form-control mb-2" id="inputInterview" name="inputInterview" [(ngModel)]="stagedetail.interview"
+                >
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputMajor">Major</label>
+                <select (change)="changeMajor()" name="inputMajor" [(ngModel)]="stagedetail.major_ID" id="inputMajor" class="form-control"
+                >
+                  <option *ngFor="let major of majors" value="{{major.id}}">{{major.majorName}}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputSubject">Subject</label>
+                <select name="inputSubject" [(ngModel)]="stagedetail.exam_ID" id="inputSubject" class="form-control"
+                >
+                  <option *ngFor="let subject of subjects" value="{{subject.id}}">{{subject.examName}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputStarTime">Star Time</label>
+                <input type="text" class="form-control mb-2" id="inputStarTime" name="inputStarTime" [(ngModel)]="stagedetail.starTime"
+                >
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEndTime">End Time</label>
+                <input type="text" class="form-control mb-2" id="inputEndTime" [(ngModel)]="stagedetail.endTime" name="inputEndTime"
+                >
+              </div>
+            </div>
+            <div class="text-block text-center my-3">
+              <p class="text-danger">{{message}}</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-primary" (click)="update(stagedetail.id)">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- delete -->
+    <div bsModal #modalDelete="bs-modal" class="modal fade" id="deleteStageDetail" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Stage</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputStageName">Stage Name</label>
+                <select name="inputstagechoose" [(ngModel)]="stagedetail.stage_ID" id="inputstagechoose" class="form-control"
+                disabled>
+                  <option *ngFor="let stage of stages" [value]="stage.id" selected>{{stage.stageName}}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputInterview">Interview</label>
+                <input type="text" class="form-control mb-2" id="inputInterview" name="inputInterview" [(ngModel)]="stagedetail.interview"
+                readonly>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputMajor">Major</label>
+                <select name="inputMajor" [(ngModel)]="stagedetail.major_ID" id="inputMajor" class="form-control"
+                disabled>
+                  <option *ngFor="let major of majors" [value]="major.id" selected>{{major.majorName}}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputSubject">Subject</label>
+                <select name="inputSubject" [(ngModel)]="stagedetail.exam_ID" id="inputSubject" class="form-control"
+                disabled>
+                  <option *ngFor="let subject of subjects" [value]="subject.id" selected>{{subject.examName}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputStarTime">Star Time</label>
+                <input type="text" class="form-control mb-2" id="inputStarTime" name="inputStarTime" [(ngModel)]="stagedetail.starTime"
+                readonly>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEndTime">End Time</label>
+                <input type="text" class="form-control mb-2" id="inputEndTime" [(ngModel)]="stagedetail.endTime" name="inputEndTime"
+                readonly>
+              </div>
+            </div>
+            <p class="text-danger">Are you sure delete this Stage Detail?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Cancel</button>
+            <button type="button" class="btn btn-danger" (click)="delete(stagedetail.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Details -->
+    <div bsModal #modalDetail="bs-modal" class="modal fade" id="detailStage" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Stage Detail</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputStageName">Stage Name</label>
+                <select name="inputstagechoose" [(ngModel)]="stagedetail.stage_ID" id="inputstagechoose" class="form-control"
+                  disabled>
+                  <option *ngFor="let stage of stages" [value]="stage.id" selected>{{stage.stageName}}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputInterview">Interview</label>
+                <input type="text" class="form-control mb-2" id="inputInterview" name="inputInterview" value="{{stagedetail.interview}}"
+                  readonly>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputMajor">Major</label>
+                <select name="inputMajor" [(ngModel)]="stagedetail.major_ID" id="inputMajor" class="form-control"
+                  disabled>
+                  <option *ngFor="let major of majors" [value]="major.id" selected>{{major.majorName}}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputSubject">Subject</label>
+                <select name="inputSubject" [(ngModel)]="stagedetail.exam_ID" id="inputSubject" class="form-control"
+                  disabled>
+                  <option *ngFor="let subject of subjects" [value]="subject.id" selected>{{subject.examName}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputStarTime">Star Time</label>
+                <input type="text" class="form-control mb-2" id="inputStarTime" name="inputStarTime" value="{{stagedetail.starTime}}"
+                  readonly>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEndTime">End Time</label>
+                <input type="text" class="form-control mb-2" id="inputEndTime" value="{{stagedetail.endTime}}" name="inputEndTime"
+                  readonly>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body table-responsive">
+    <form>
+      <div class="form-group row">
+        <label for="inputstagechoose" class="col-sm-2 col-form-label">
+          <h5>Stage Choose:</h5>
+        </label>
+        <div class="col-sm-3">
+          <select (change)="changeStage()" name="inputstagechoose" [(ngModel)]="stage.id" id="inputstagechoose" class="form-control">
+            <option *ngFor="let stage of stages" value="{{stage.id}}" selected>{{stage.stageName}}</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <table datatable class="table table-striped table-hover display">
+      <thead class="bg-color text-white">
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Stage Name</th>
+          <th scope="col">Major</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Interview</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stagedetail of stagedetails; let i=index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{stagedetail.stage.stageName}}</td>
+          <td>{{stagedetail.major.majorName}}</td>
+          <td>{{stagedetail.examSubject.examName}}</td>
+          <td>{{stagedetail.interview}}</td>
+          <td><a href="#" (click)="ShowModalDetail($event,stagedetail.id)" class="text-warning">Detail</a>
+            | <a href="#" (click)="ShowModalEdit($event,stagedetail.id)">Edit</a>
+            | <a href="#" (click)="ShowModalDelete($event,stagedetail.id)" class="text-danger">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

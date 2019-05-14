@@ -1,0 +1,151 @@
+<div class="card">
+  <div class="card-header text-dark">
+    Candidate Type
+    <div class="ml-auto d-inline float-right">
+      <button type="button" class="btn btn-primary btn-sm ml-auto" (click)="ShowModalAdd()">Add</button>
+    </div>
+
+    <!-- add -->
+    <div bsModal #modalAdd="bs-modal" class="modal fade" id="addCandidateType" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New Candidate Type</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="inputCandidateType">Candidate Type Name</label>
+                  <input type="text" class="form-control mb-2" id="inputExamTime" [(ngModel)]="cdtype.typeName" name="inputExamTime" placeholder="Enter New Candidate Type Name">
+                </div>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-success" (click)="add()">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- edit -->
+    <div bsModal #modalEdit="bs-modal" class="modal fade" id="editCandidateType" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Candidate Type</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputMajorName" class="col-sm-5 col-form-label">Candidate Type Name:</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" name="inputMajorName" id="inputMajorName" [(ngModel)]="cdtype.typeName">
+                </div>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-primary" (click)="update(cdtype.id)">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- delete -->
+    <div bsModal #modalDelete="bs-modal" class="modal fade" id="deleteCandidateType" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Candidate Type Delete</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputCandidateType" class="col-sm-5 col-form-label">Candidate Type name:</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" name="inputCandidateType" id="inputCandidateType" [(ngModel)]="cdtype.typeName" readonly>
+                </div>
+              </div>
+            </form>
+            <p class="text-danger">Are you sure delete this Candidate Type?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Cancel</button>
+            <button type="button" class="btn btn-danger" (click)="delete(cdtype.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Details -->
+    <div bsModal #modalDetail="bs-modal" class="modal fade" id="detailCandidateType" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Candidate Type Detail</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputCandidateType" class="col-sm-5 col-form-label">Candidate Type name:</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputCandidateType" value="{{cdtype.typeName}}" readonly>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+          </div>
+        </div>
+      </div>>
+    </div>
+  </div>
+  <div class="card-body table-responsive">
+    <table datatable class="table table-striped table-hover display">
+      <thead class="bg-color text-white">
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Candidate Type Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cdtype of cdtypes; let i=index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{cdtype.typeName}}</td>
+
+          <td>
+            <!-- <a href="#" (click)="ShowModalDetail($event,cdtype.id)" class="text-warning">Details</a> -->
+            <a href="#" (click)="ShowModalEdit($event,cdtype.id)">Edit</a>
+            | <a href="#" (click)="ShowModalDelete($event,cdtype.id)" class="text-danger">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

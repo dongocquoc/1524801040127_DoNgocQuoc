@@ -1,0 +1,23 @@
+<table class="table-primary text-white">
+  <thead>
+    <th>Name</th>
+    <th>Input</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><label>Server Name</label></td>
+      <td><input type="text" class="form-control" (input)="onUpdateServerName($event)"></td>
+    </tr>
+    <tr>
+      <td aria-rowspan="2"><p>{{serverName}}</p></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+<button class="btn btn-primary" [disabled]="!allowNewServar" (click)="onCreateServer()">Add Name</button>
+<p [innerText]="allowNewServar"></p>
+<p>{{serverCreationStatus}}</p>

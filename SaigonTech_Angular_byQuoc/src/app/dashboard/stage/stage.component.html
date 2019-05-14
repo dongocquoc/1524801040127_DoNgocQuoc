@@ -1,0 +1,301 @@
+<!-- content-wrapper ends -->
+<div class="card w-100">
+  <div class="card-header text-dark">
+    Stage
+    <div class="ml-auto d-inline float-right">
+      <button type="button" class="btn btn-primary btn-sm ml-auto" (click)="ShowModalAdd()">Add</button>
+    </div>
+
+    <!-- add -->
+    <div bsModal #modalAdd="bs-modal" class="modal fade" id="addStage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New Stage</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputStage">Stage Name</label>
+                  <input type="text" class="form-control mb-2" id="inputStageName" [(ngModel)]="stage.stageName" name="inputStageName"
+                    placeholder="Enter New Stage Name">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputSemester">Semester</label>
+                  <select [(ngModel)]="semester.id" name="inputSemester" id="inputSemester" class="form-control">
+                    <option *ngFor="let semester of semesters" [value]="semester.id" selected>{{semester.semesterName}}</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputYear">Year</label>
+                  <select [(ngModel)]="year.id" name="inputYear" id="inputYear" class="form-control">
+                    <option *ngFor="let year of years" [value]="year.id" selected>{{year.yearName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputDateTime">Date/Time</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <a href="#"><i class="mdi mdi-calendar-plus"></i></a>
+                      </div>
+                    </div>
+                    <input type="date" class="form-control" id="inputDateTime" [(ngModel)]="stage.dateTimes" name="inputDateTime">
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputExamDate">Exam Date</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <a href="#"><i class="mdi mdi-calendar-plus"></i></a>
+                      </div>
+                    </div>
+                    <input type="date" class="form-control" id="inputExamDate" [(ngModel)]="stage.examDate" name="inputExamDate">
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputExamTime">Exam Time</label>
+                  <input type="text" class="form-control mb-2" id="inputExamTime" [(ngModel)]="stage.examTime" name="inputExamTime">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputTimeEnglish">Time Of English Exam</label>
+                  <input type="text" class="form-control mb-2" id="inputTimeEnglish" [(ngModel)]="stage.englishTimeExam"
+                    name="inputTimeEnglish">
+                </div>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-success" (click)="add()">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- edit -->
+    <div bsModal #modalEdit="bs-modal" class="modal fade" id="editStage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Stage</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputStage">Stage Name</label>
+                  <input type="text" class="form-control mb-2" id="inputExamTime" [(ngModel)]="stage.stageName" name="inputStageName">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputSemester">Semester</label>
+                  <select id="inputSemester" class="form-control" [(ngModel)]="stage.seM_ID" name="inputSemester">
+                    <option *ngFor="let semester of semesters" [value]="semester.id">{{semester.semesterName}}</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputYear">Year</label>
+                  <select id="inputYear" class="form-control" [(ngModel)]="stage.yeaR_ID" name="inputYear">
+                    <option *ngFor="let year of years" [value]="year.id" selected>{{year.yearName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputDateTime">Date/Time</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <a href="#"><i class="mdi mdi-calendar-plus"></i></a>
+                      </div>
+                    </div>
+                    <input type="date" class="form-control" id="inputDateTime" [(ngModel)]="stage.dateTimes" name="inputDateTime">
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputExamDate">Exam Date</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <a href="#"><i class="mdi mdi-calendar-plus"></i></a>
+                      </div>
+                    </div>
+                    <input type="date" class="form-control" id="inputExamDate" [(ngModel)]="stage.examDate" name="inputExamDate">
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputExamTime">Exam Time</label>
+                  <input type="text" class="form-control mb-2" id="inputExamTime" [(ngModel)]="stage.examTime" name="inputExamTime">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputTimeEnglish">Time Of English Exam</label>
+                  <input type="text" class="form-control mb-2" id="inputTimeEnglish" [(ngModel)]="stage.englishTimeExam"
+                    name="inputTimeEnglish">
+                </div>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-primary" (click)="update(stage.id)">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- delete -->
+    <div bsModal #modalDelete="bs-modal" class="modal fade" id="deleteStage" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Stage</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger">Are you sure delete this {{stage.stageName}}?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Cancel</button>
+            <button type="button" class="btn btn-danger" (click)="delete(stage.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Details -->
+    <div bsModal #modalDetail="bs-modal" class="modal fade" id="detailStage" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Stage Detail</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputStage">Stage Name</label>
+                  <input type="text" name="inputExamTime" class="form-control mb-2" id="inputExamTime" value="{{stage.stageName}}"
+                    readonly>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputSemester">Semester</label>
+                  <select [(ngModel)]="stage.seM_ID" name="inputSemester" id="inputSemester" class="form-control" disabled>
+                    <option *ngFor="let semester of semesters" [value]="semester.id">{{semester.semesterName}}</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputYear">Year</label>
+                  <select [(ngModel)]="stage.yeaR_ID" name="inputYear" id="inputYear" class="form-control" disabled>
+                    <option *ngFor="let year of years" [value]="year.id">{{year.yearName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputDateTime">Date/Time</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <a href="#"><i class="mdi mdi-calendar-plus"></i></a>
+                      </div>
+                    </div>
+                    <input type="text" class="form-control" id="inputDateTime" value="{{stage.dateTimes}}" readonly>
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputExamDate">Exam Date</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <a href="#"><i class="mdi mdi-calendar-plus"></i></a>
+                      </div>
+                    </div>
+                    <input type="text" class="form-control" id="inputExamDate" value="{{stage.examDate}}" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputExamTime">Exam Time</label>
+                  <input type="text" class="form-control mb-2" id="inputExamTime" value="{{stage.examTime}}" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputTimeEnglish">Time Of English Exam</label>
+                  <input type="text" class="form-control mb-2" id="inputTimeEnglish" value="{{stage.englishTimeExam}}"
+                    readonly>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body table-responsive w-100">
+    <table datatable class="table table-striped table-hover display">
+      <thead class="bg-color text-white">
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Stage Name</th>
+          <th scope="col">Semester</th>
+          <th scope="col">Year</th>
+          <th scope="col">Date/Time</th>
+          <th scope="col">Exam Date</th>
+          <th scope="col">Exam Time</th>
+          <th scope="col">Time Of English Exam</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stage of stages; let i=index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{stage.stageName}}</td>
+          <td>{{stage.semester.semesterName}}</td>
+          <td>{{stage.year.yearName}}</td>
+          <td>{{stage.dateTimes}}</td>
+          <td>{{stage.examDate}}</td>
+          <td>{{stage.examTime}}</td>
+          <td>{{stage.englishTimeExam}}</td>
+          <td>
+           
+            <a routerLink="/dashboard/stagedetail" [queryParams]="{id: stage.id}"  class="text-warning">Stage Detail</a>
+            | <a href="#" (click)="ShowModalEdit($event,stage.id)">Edit</a>
+            | <a href="#" (click)="ShowModalDelete($event,stage.id)" class="text-danger">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- partial -->
+<!-- page-body-wrapper ends -->

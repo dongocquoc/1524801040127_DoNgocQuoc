@@ -1,0 +1,378 @@
+<div class="card">
+  <div class="card-header bg-light pb-4">
+    Address
+    <!--Add country modal-->
+    <div bsModal #modalAddCountry="bs-modal" class="modal fade" id="CountryAdd" tabindex="-1" role="dialog" aria-labelledby="CountryAddLable" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="CountrypleModalLabel">Add Country</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputCountryName" class="col-sm-4 col-form-label">Country Name:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputCountryName" name="inputCountryName" [(ngModel)]="country.countryName" placeholder="Enter New Country Name">
+                </div>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-success" (click)="addCountry()">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Add province modal-->
+    <div bsModal #modalAddProvince="bs-modal" class="modal fade" id="ProvinceAdd" tabindex="-1" role="dialog" aria-labelledby="ProvinceAddLable" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ProvinceModalLabel">Add Province</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputCountryName" class="col-sm-5 col-form-label">Choose The Country:<span class="text-danger">*</span></label>
+                <div class="col-sm-7">
+                  <select (change)="changeCountry()" name="inputProvince" [(ngModel)]="country.id" id="inputCountry" class="form-control">
+                    <option *ngFor="let country of countries" value="{{country.id}}" selected>{{country.countryName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputProvinceName" class="col-sm-5 col-form-label">Province Name:</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputProvinceName" name="inputProvinceName" [(ngModel)]="province.provinceName" placeholder="Enter New Province name">
+                </div>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-success" (click)="addProvince()">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Add district modal-->
+    <div bsModal #modalAddDistrict="bs-modal" class="modal fade" id="DistrictAdd" tabindex="-1" role="dialog" aria-labelledby="DistrictAddLable" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="DistrictModalLabel">Add District</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputCountryName" class="col-sm-5 col-form-label">Choose The Country:<span class="text-danger">*</span></label>
+                <div class="col-sm-7">
+                  <select (change)="changeCountry()" name="inputCountry" [(ngModel)]="country.id" id="inputCountry" class="form-control">
+                    <option *ngFor="let country of countries" value="{{country.id}}" selected>{{country.countryName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputProvinceName" class="col-sm-5 col-form-label">Choose The Province:<span class="text-danger">*</span></label>
+                <div class="col-sm-7">
+                  <select (change)="changeProvince()" name="inputProvince" [(ngModel)]="province.id" id="inputProvince" class="form-control">
+                    <option *ngFor="let province of provinces" value="{{province.id}}" selected>{{province.provinceName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputDistrictName" class="col-sm-5 col-form-label">District Name:</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputDistrictName" name="inputDistrictName" [(ngModel)]="district.districtName" placeholder="Enter New District name">
+                </div>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-success" (click)="addDistrict()">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Edit Country Modal-->
+    <div bsModal #modalEditCountry="bs-modal" class="modal fade" id="CountryEdit" tabindex="-1" role="dialog" aria-labelledby="CountryEditLable" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="CountryModalLabel">Edit Country</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputCountryName" class="col-sm-4 col-form-label">Country Name:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputCountryName" name="inputCountryName" [(ngModel)]="country.countryName">
+                </div>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-primary" (click)="updateCountry(country.id)">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Edit province modal-->
+    <div bsModal #modalEditProvince="bs-modal" class="modal fade" id="ProvinceEdit" tabindex="-1" role="dialog" aria-labelledby="ProvinceEditLable"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ProvinceModalLabel">Edit Province</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputCountryName" class="col-sm-4 col-form-label">Choose The Country:</label>
+                <div class="col-sm-8">
+                  <select (change)="changeCountry()" name="inputProvince" [(ngModel)]="country.id" id="inputCountry" class="form-control" disabled>
+                    <option *ngFor="let country of countries" value="{{country.id}}" selected>{{country.countryName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputProvinceName" class="col-sm-4 col-form-label">Province Name:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputProvinceName" name="inputProvinceName" [(ngModel)]="province.provinceName">
+                </div>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+            <button type="button" class="btn btn-primary" (click)="updateProvince()">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Edit district modal-->
+    <div bsModal #modalEditDistrict="bs-modal" class="modal fade" id="DistrictEdit" tabindex="-1" role="dialog" aria-labelledby="DistrictEditLable"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="DistrictModalLabel">Edit District</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputCountryName" class="col-sm-4 col-form-label">Choose The Country:</label>
+                <div class="col-sm-8">
+                  <select (change)="changeCountry()" name="inputCountry" [(ngModel)]="country.id" id="inputCountry" class="form-control" disabled>
+                    <option *ngFor="let country of countries" value="{{country.id}}" selected>{{country.countryName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputProvinceName" class="col-sm-4 col-form-label">Choose The Province:</label>
+                <div class="col-sm-8">
+                  <select (change)="changeProvince()" name="inputProvince" [(ngModel)]="province.id" id="inputProvince" class="form-control" disabled>
+                    <option *ngFor="let province of provinces" value="{{province.id}}" selected>{{province.provinceName}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputDistrictName" class="col-sm-4 col-form-label">District Name:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputDistrictName" name="inputDistrictName" [(ngModel)]="district.districtName">
+                </div>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            <button type="button" class="btn btn-primary" (click)="updateDistrict()">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Delete country modal-->
+    <div bsModal #modalDeleteCountry="bs-modal" class="modal fade" id="CountryDel" tabindex="-1" role="dialog" aria-labelledby="CountryDelLable" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="CountryModalLabel">Delete Country</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputCountryName" class="col-sm-4 col-form-label">Country Name:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputCountryName" name="inputCountryName" [(ngModel)]="country.countryName" readonly>
+                </div>
+              </div>
+            </form>
+            <p class="text-danger">Are you sure delete this Country?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Cancel</button>
+            <button type="button" class="btn btn-danger" (click)="deleteCountry(country.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Delete province modal-->
+    <div bsModal #modalDeleteProvince="bs-modal" class="modal fade" id="ProvinceDel" tabindex="-1" role="dialog" aria-labelledby="ProvinceDelLable" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ProvinceModalLabel">Delete Province</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputCountryName" class="col-sm-4 col-form-label">Province Name:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputProvinceName" name="inputProvinceName" [(ngModel)]="province.provinceName" readonly>
+                </div>
+              </div>
+            </form>
+            <p class="text-danger">Are you sure delete this Province?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Cancel</button>
+            <button type="button" class="btn btn-danger" (click)="deleteProvince(province.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Delete district modal-->
+    <div bsModal #modalDeleteDistrict="bs-modal" class="modal fade" id="DistrictDel" tabindex="-1" role="dialog" aria-labelledby="DistrictDelLable" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="DistrictpleModalLabel">Delete District</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="inputDistrictName" class="col-sm-4 col-form-label">District Name:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputDistrictName" name="inputDistrictName" [(ngModel)]="district.districtName" readonly>
+                </div>
+              </div>
+            </form>
+            <p class="text-danger">Are you sure delete this District?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Cancel</button>
+            <button type="button" class="btn btn-danger" (click)="deleteDistrict(district.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <form>
+      <!--Country-->
+      <div class="form-group row justify-content-center">
+        <label for="inputCountry" class="col-sm-1 col-form-label">Country:</label>
+        <div class="col-sm-4">
+          <select (change)="changeCountry()" name="inputCountry" [(ngModel)]="country.id" id="inputCountry" class="form-control">
+            <option *ngFor="let country of countries" value="{{country.id}}" selected>{{country.countryName}}</option>
+          </select>
+        </div>
+
+        <button class="btn btn-success col-sm-1 mx-2" type="button" (click)="ShowModalAddCountry()">Add</button>
+
+        <button class="btn btn-primary col-sm-1 mx-2" type="button" (click)="ShowModalEditCountry(country.id)">
+          Edit</button>
+
+        <button class="btn btn-danger col-sm-1 mx-2" type="button" (click)="ShowModalDeleteCountry(country.id)">
+          Delete</button>
+
+      </div>
+      <!--Province-->
+      <div class="form-group row justify-content-center">
+        <label for="inputProvince" class="col-sm-1 col-form-label">Province:</label>
+        <div class="col-sm-4">
+          <select (change)="changeProvince()" name="inputProvince" [(ngModel)]="province.id" id="inputProvince" class="form-control">
+            <option *ngFor="let province of provinces" value="{{province.id}}" selected>{{province.provinceName}}</option>
+          </select>
+        </div>
+
+        <button class="btn btn-success col-sm-1 mx-2" type="button" (click)="ShowModalAddProvince()">Add</button>
+
+        <button class="btn btn-primary col-sm-1 mx-2" type="button" (click)="ShowModalEditProvince(province.id)">Edit</button>
+
+        <button class="btn btn-danger col-sm-1 mx-2" type="button" (click)="ShowModalDeleteProvince(province.id)">Delete</button>
+
+      </div>
+      <!--District-->
+      <div class="form-group row justify-content-center">
+        <label for="inputDistrict" class="col-sm-1 col-form-label">District:</label>
+        <div class="col-sm-4">
+          <select id="inputDistrict" name="inputDistrict" class="form-control" [(ngModel)]="district.id">
+            <option *ngFor="let district of districts" value="{{district.id}}" selected>{{district.districtName}}</option>
+          </select>
+        </div>
+
+        <button class="btn btn-success col-sm-1 mx-2" type="button" (click)="ShowModalAddDistrict()">Add</button>
+
+        <button class="btn btn-primary col-sm-1 mx-2" type="button" (click)="ShowModalEditDistrict(district.id)">Edit</button>
+
+        <button class="btn btn-danger col-sm-1 mx-2 " type="button" (click)="ShowModalDeleteDistrict(district.id)">Delete</button>
+
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,237 @@
+<div class="card">
+  <div class="card-header">
+    Document
+    <button class="btn btn-primary addbutton float-right" (click)="ShowModalAdd()"> Add</button>
+  </div>
+  <div class="card-body table-responsive">
+    <table datatable class="table table-striped table-hover mytable display">
+      <thead class="bg-color text-white">
+        <tr>
+          <th>No.</th>
+          <th>English name</th>
+          <th>Vietnamese name</th>
+          <th>Status</th>
+          <th>Input Type</th>
+          <th>Sequence Num</th>
+          <th>Note</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of documents; let i=index">
+          <th>{{i+1}}</th>
+          <td style="word-wrap: break-word">{{row.nameInEnglish}}</td>
+          <td>{{row.nameInVietnamese}}</td>
+          <td>{{row.statuss.statusName}}</td>
+          <td>{{row.inputTypes.inputName}}</td>
+          <td>{{row.sequenceNumber}}</td>
+          <td>{{row.note}}</td>
+          <td>
+            <a href="#" class="text-warning" (click)="ShowModalDetail($event,row.id)">Detail</a> |
+            <a href="#" (click)="ShowModalEdit($event,row.id)">Edit</a> |
+            <a href="#" class="text-danger" (click)="ShowModalDelete($event,row.id)">Delete</a>
+          </td>
+        </tr>
+
+        <!--START: MODAL ADD-->
+        <div bsModal #modalAdd="bs-modal" class="modal fade" id="modalAddDocument" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Document</h5>
+                <button type="button" class="close" data-dismiss="modal" (click)="close()" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form action="" method="POST">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="inputEnglishName">English Name</label>
+                    <input type="text" class="form-control" id="inputEnglishName" name="tieude" [(ngModel)]="document.nameInEnglish" placeholder="Enter new English name">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputVietnameseName">Vietnamese Name</label>
+                    <input type="text" class="form-control" id="inputVietnameseName" name="tieude" [(ngModel)]="document.nameInVietnamese" placeholder="Enter new Vietnam name">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="selectStatus">Status</label>
+                      <select [(ngModel)]="status.id" class="form-control" id="selectStatus" name="selectStatus">
+                        <option *ngFor="let status of statuss" value="{{status.id}}" checked>{{status.statusName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="selectInputType">Input Type</label>
+                      <select [(ngModel)]="inputtype.id" class="form-control" id="selectInputType" name="selectInputType">
+                        <option *ngFor="let inputtype of inputtypes" value="{{inputtype.id}}" checked>{{inputtype.inputName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputSequenceNum">Sequence Num</label>
+                      <input type="text" class="form-control" id="inputSequenceNum" name="sequencenum" [(ngModel)]="document.sequenceNumber" placeholder="Enter new Sequence number">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputNote">Note</label>
+                      <input type="text" class="form-control" id="inputNote" name="note" [(ngModel)]="document.note" placeholder="Enter new Note">
+                    </div>
+                  </div>
+                  <div class="text-block text-center my-3">
+                    <p class="text-danger">{{message}}</p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+                  <button type="button" class="btn btn-success" (click)="add()">Add</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--END: MODAL ADD-->
+
+        <!--START: MODAL DETAIL-->
+        <div bsModal #modalDetail="bs-modal" class="modal fade" id="modaldDocumentDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Document Detail</h5>
+                <button type="button" class="close" data-dismiss="modal" (click)="close()" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form action="" method="POST">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="inputEnglishName">English Name</label>
+                    <input type="text" class="form-control" id="inputEnglishName" name="tieude" value="{{document.nameInEnglish}}"
+                      readonly>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputVietnameseName">Vietnamese Name</label>
+                    <input type="text" class="form-control" id="inputVietnameseName" name="tieude" value="{{document.nameInVietnamese}}"
+                      readonly>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="selectStatus">Status</label>
+                      <select [(ngModel)]="document.status" class="form-control" id="selectStatus" name="selectStatus" disabled>
+                        <option *ngFor="let status of statuss" [value]="status.id" checked>{{status.statusName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="selectInputType">Input Type</label>
+                      <select [(ngModel)]="document.inputtype" class="form-control" id="selectInputType" name="selectInputType" disabled>
+                        <option *ngFor="let inputtype of inputtypes" [value]="inputtype.id" checked>{{inputtype.inputName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputSequenceNum">Sequence Num</label>
+                      <input type="text" class="form-control" id="inputSequenceNum" name="sequencenum" value="{{document.sequenceNumber}}"
+                        readonly>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputNote">Note</label>
+                      <input type="text" class="form-control" id="inputNote" name="note" value="{{document.note}}" readonly>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--END: MODAL DETAIL-->
+
+        <!--START: MODAL EDIT-->
+        <div bsModal #modalEdit="bs-modal" class="modal fade" id="modalEditDocument" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Document</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form action="" method="POST">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="inputEnglishName">English Name</label>
+                    <input type="text" class="form-control" id="inputEnglishName" name="tieude" [(ngModel)]="document.nameInEnglish">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputVietnameseName">Vietnamese Name</label>
+                    <input type="text" class="form-control" id="inputVietnameseName" name="tieude" [(ngModel)]="document.nameInVietnamese">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="selectStatus">Status</label>
+                      <select [(ngModel)]="document.status" class="form-control" id="selectStatus" name="selectStatus">
+                        <option *ngFor="let status of statuss" value="{{status.id}}" checked>{{status.statusName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="selectInputType">Input Type</label>
+                      <select [(ngModel)]="document.inputtype" class="form-control" id="selectInputType" name="selectInputType">
+                        <option *ngFor="let inputtype of inputtypes" value="{{inputtype.id}}" checked>{{inputtype.inputName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputSequenceNum">Sequence Num</label>
+                      <input type="text" class="form-control" id="inputSequenceNum" name="sequencenum" [(ngModel)]="document.sequenceNumber">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputNote">Note</label>
+                      <input type="text" class="form-control" id="inputNote" name="note" [(ngModel)]="document.note">
+                    </div>
+                  </div>
+                  <div class="text-block text-center my-3">
+                    <p class="text-danger">{{message}}</p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+                  <button type="button" class="btn btn-primary" name="btnupdate" (click)="update(document.id)">Update</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--END: MODAL EDIT-->
+
+        <!--START: MODAL DELETE-->
+        <div bsModal #modalDelete="bs-modal" class="modal fade" id="deleteDocument" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Document</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p class="text-danger">Are you sure delete this {{document.nameInEnglish}}?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Cancel</button>
+                <button type="button" class="btn btn-danger" (click)="delete(document.id)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--END: MODAL DELETE-->
+      </tbody>
+    </table>
+  </div>
+</div>

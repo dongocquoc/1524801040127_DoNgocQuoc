@@ -1,0 +1,770 @@
+<!-- content-wrapper ends -->
+<div class="card w-100">
+  <div class="card-header text-dark">
+    Candidate
+    <div class="ml-auto d-inline float-right">
+      <button type="button" class="btn btn-primary float-right" (click)="ShowModalAdd()">Add</button>
+    </div>
+
+    <!-- add -->
+    <div bsModal #modalAdd="bs-modal" class="modal fade" id="addCandidate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New Candidate</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="#">
+            <div class="modal-body">
+              <div class="container">
+                <fieldset>
+                  <legend></legend>
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputStage">Stage</label>
+                      <select id="inputStage" name="inputStage" (change)="changeMajor()" [(ngModel)]="allstage.id" class="form-control">
+                        <option *ngFor="let allstage of allstages" [value]="allstage.id">{{allstage.stageName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputSemester">Semester</label>
+                      <select id="inputSemester" name="inputSemester" [(ngModel)]="allstage.seM_ID"
+                        class="form-control">
+                        <option *ngFor="let semester of semesters" [value]="semester.id">{{semester.semesterName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputYear">Year</label>
+                      <select id="inputYear" name="inputYear" [(ngModel)]="allstage.yeaR_ID" class="form-control">
+                        <option *ngFor="let year of years" [value]="year.id" selected>{{year.yearName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputCatalog">Catalog</label>
+                      <select id="inputCatalog" name="inputCatalog" [(ngModel)]="catalog.id" class="form-control">
+                        <option *ngFor="let catalog of catalogs" value="{{catalog.id}}" selected>{{catalog.beginYear}}
+                          - {{catalog.endYear}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputCandidateId">Candidate ID</label>
+                      <input type="text" class="form-control" id="inputCandidateId" name="inputCandidateId" [(ngModel)]="candidate.candidateId"
+                        placeholder="Candidate Number">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputFirstname">First Name</label>
+                      <input type="text" class="form-control" id="inputFirstname" name="inputFirstname" [(ngModel)]="candidate.firstName"
+                        placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputLastname">Last Name</label>
+                      <input type="text" class="form-control" id="inputLastname" name="inputLastname" [(ngModel)]="candidate.lastName"
+                        placeholder="Last Name">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputbirthday">Date Of Birth</label>
+                      <input type="date" class="form-control" id="inputbirthday" name="inputbirthday" [(ngModel)]="candidate.dateOfBirth">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputGender">Gender</label>
+                      <select id="inputGender" name="inputGender" [(ngModel)]="selectedValuegender" class="form-control">
+                        <option *ngFor="let gender of genders" value="{{gender.id}}" selected>{{gender.name}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputMajor">Major</label>
+                      <select id="inputMajor" name="inputMajor" [(ngModel)]="stagedetailAdd.major_ID" class="form-control">
+                        <option *ngFor="let majorAdd of majorAdds" value="{{majorAdd.id}}" selected>{{majorAdd.majorName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail">Email</label>
+                      <input type="email" class="form-control" id="inputEmail" name="inputEmail" [(ngModel)]="candidate.email"
+                        placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputIDCard">ID Card</label>
+                      <input type="text" class="form-control" id="inputIDCard" name="inputIDCard" [(ngModel)]="candidate.cardId"
+                        placeholder="ID Card">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputIntake">Intake</label>
+                      <select id="inputIntake" name="inputIntake" [(ngModel)]="intake.id" class="form-control">
+                        <option *ngFor="let intake of intakes" value="{{intake.id}}" selected>{{intake.intakeName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCountryAddress">Address</label>
+                      <select (change)="changeCountry()" name="inputCountryAddress" [(ngModel)]="country.id" id="inputCountryAddress" class="form-control">
+                        <option *ngFor="let country of countries" value="{{country.id}}" selected>{{country.countryName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputProvince"></label>
+                      <select (change)="changeProvince()" name="inputProvince" [(ngModel)]="province.id" id="inputProvince" class="form-control">
+                        <option *ngFor="let province of provinces" value="{{province.id}}" selected>{{province.provinceName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <select id="inputDistrict" name="inputDistrict" class="form-control" [(ngModel)]="district.id">
+                        <option *ngFor="let district of districts" value="{{district.id}}" selected>{{district.districtName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <input type="text" class="form-control" id="inputaddress" name="inputaddress" [(ngModel)]="candidate.homeAddress"
+                        placeholder="Home Number, Streets">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputPlaceofbirth">Place Of Birth</label>
+                      <input type="text" class="form-control" id="inputPlaceofbirth" name="inputPlaceofbirth"
+                        [(ngModel)]="candidate.placeOfBirth" placeholder="Hospital, Districts, City">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputMarialStatus">Marial Status</label>
+                      <select id="inputMarialStatus" name="inputMarialStatus" [(ngModel)]="selectedValuemarial" class="form-control">
+                        <option *ngFor="let marial of marialstatus" value="{{marial.id}}" selected>{{marial.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="">Phone Number</label>
+                      <input type="text" class="form-control" id="inputPhone" name="inputPhone" [(ngModel)]="candidate.phone"
+                        placeholder="Phone Number">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputhomecountry">Home Country</label>
+                      <select name="inputCountry" [(ngModel)]="homecountry.id" id="inputCountry" class="form-control">
+                        <option *ngFor="let homecountry of homecountries" value="{{homecountry.id}}" selected>{{homecountry.countryName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputHighschoolname">High School Name</label>
+                      <input type="text" id="inputHighschoolname" name="inputHighschoolname" [(ngModel)]="candidate.highSchoolName"
+                        class="form-control" placeholder="High School Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputHighschoolcity">High School City</label>
+                      <select name="inputHighschoolcity" [(ngModel)]="schoolcity.id" id="inputHighschoolcity" class="form-control">
+                        <option *ngFor="let schoolcity of schoolcitys" value="{{schoolcity.id}}" selected>{{schoolcity.provinceName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputHighschool">High School Graduate Year</label>
+                      <input type="number" id="inputHighschoolname" name="inputHighschoolname" [(ngModel)]="candidate.graduateYear"
+                        class="form-control" min="1900" max="2099" step="1" value="2019">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputEducation">Education</label>
+                      <select id="inputEducation" name="inputEducation" [(ngModel)]="education.id" class="form-control">
+                        <option *ngFor="let education of educations" value="{{education.id}}" selected>{{education.educationName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputDocumentCode">Document Code</label>
+                      <input type="text" class="form-control" id='inputDocumentCode' name="inputDocumentCode"
+                        [(ngModel)]="candidate.documentCode" placeholder="Document Number" />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputRegisterDate">Register Date</label>
+                      <input type="date" class="form-control" id="inputRegisterDate" name="inputRegisterDate"
+                        [(ngModel)]="candidate.registryDate" placeholder="Register Date">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCandidateType">Candidate Type</label>
+                      <select id="inputCandidateType" name="inputCandidateType" [(ngModel)]="candidatetype.id" class="form-control">
+                        <option *ngFor="let candidatetype of candidatetypes" value="{{candidatetype.id}}" selected>{{candidatetype.typeName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputFinalResult">Final Result</label>
+                      <select id="inputFinalResult" name="inputFinalResult" [(ngModel)]="selectedValuefinal" class="form-control">
+                        <option *ngFor="let final of finals" value="{{final.id}}" selected>{{final.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+              <button type="button" class="btn btn-success" (click)="add()">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- edit -->
+    <div bsModal #modalEdit="bs-modal" class="modal fade" id="editCandidate" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Candidate</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="#">
+            <div class="modal-body">
+              <div class="container">
+                <fieldset>
+                  <legend></legend>
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputStage">Stage</label>
+                      <select id="inputStage" name="inputStage" (change)="changeStageEdit()" [(ngModel)]="stageEdit.id" class="form-control">
+                        <option *ngFor="let stageEdit of stageEdits" value="{{stageEdit.id}}" selected>{{stageEdit.stageName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputSemester">Semester</label>
+                      <select id="inputSemester" name="inputSemester" [(ngModel)]="stageEdit.seM_ID"
+                        class="form-control">
+                        <option *ngFor="let semester of semesters" value="{{semester.id}}" selected>{{semester.semesterName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputYear">Year</label>
+                      <select id="inputYear" name="inputYear" [(ngModel)]="stageEdit.yeaR_ID" class="form-control">
+                        <option *ngFor="let year of years" value="{{year.id}}" selected>{{year.yearName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputCatalog">Catalog</label>
+                      <select id="inputCatalog" name="inputCatalog" [(ngModel)]="candidate.cataloG_ID" class="form-control">
+                        <option *ngFor="let catalog of catalogs" value="{{catalog.id}}" selected>{{catalog.beginYear}}
+                          - {{catalog.endYear}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputCandidateId">Candidate ID</label>
+                      <input type="text" class="form-control" id="inputCandidateId" name="inputCandidateId" [(ngModel)]="candidate.candidateId"
+                        placeholder="Candidate Number">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputFirstname">First Name</label>
+                      <input type="text" class="form-control" id="inputFirstname" name="inputFirstname" [(ngModel)]="candidate.firstName"
+                        placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputLastname">Last Name</label>
+                      <input type="text" class="form-control" id="inputLastname" name="inputLastname" [(ngModel)]="candidate.lastName"
+                        placeholder="Last Name">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputbirthday">Date Of Birth</label>
+                      <input type="date" class="form-control" id="inputbirthday" name="inputbirthday" [(ngModel)]="candidate.dateOfBirth">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputGender">Gender</label>
+                      <select id="inputGender" name="inputGender" [(ngModel)]="candidate.gender" class="form-control">
+                        <option *ngFor="let gender of genders" value="{{gender.id}}" selected>{{gender.name}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputMajor">Major</label>
+                      <select id="inputMajor" name="inputMajor" [(ngModel)]="candidate.majoR_ID" class="form-control">
+                        <option *ngFor="let major of majors" value="{{major.id}}" selected>{{major.majorName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail">Email</label>
+                      <input type="email" class="form-control" id="inputEmail" name="inputEmail" [(ngModel)]="candidate.email"
+                        placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputIDCard">ID Card</label>
+                      <input type="text" class="form-control" id="inputIDCard" name="inputIDCard" [(ngModel)]="candidate.cardId"
+                        placeholder="ID Card">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputIntake">Intake</label>
+                      <select id="inputIntake" name="inputIntake" [(ngModel)]="candidate.intakE_ID" class="form-control">
+                        <option *ngFor="let intake of intakes" value="{{intake.id}}" selected>{{intake.intakeName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCountryAddress">Address</label>
+                      <select (change)="changeCountryEdit()" name="inputCountryAddress" [(ngModel)]="candidate.countryAddress" id="inputCountryAddress" class="form-control">
+                        <option *ngFor="let country of countries" value="{{country.id}}" selected>{{country.countryName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputProvince"></label>
+                      <select (change)="changeProvinceEdit()" name="inputProvince" [(ngModel)]="candidate.provinceAddress" id="inputProvince" class="form-control">
+                        <option *ngFor="let province of provinces" value="{{province.id}}" selected>{{province.provinceName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <select id="inputDistrict" name="inputDistrict" class="form-control" [(ngModel)]="candidate.districtAddress">
+                        <option *ngFor="let district of districts" value="{{district.id}}" selected>{{district.districtName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <input type="text" class="form-control" id="inputaddress" name="inputaddress" [(ngModel)]="candidate.homeAddress"
+                        placeholder="Home Number, Streets">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputPlaceofbirth">Place Of Birth</label>
+                      <input type="text" class="form-control" id="inputPlaceofbirth" name="inputPlaceofbirth"
+                        [(ngModel)]="candidate.placeOfBirth" placeholder="Hospital, Districts, City">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputMarialStatus">Marial Status</label>
+                      <select id="inputMarialStatus" name="inputMarialStatus" [(ngModel)]="candidate.maritalStatus" class="form-control">
+                        <option *ngFor="let marial of marialstatus" value="{{marial.id}}" selected>{{marial.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="">Phone Number</label>
+                      <input type="text" class="form-control" id="inputPhone" name="inputPhone" [(ngModel)]="candidate.phone"
+                        placeholder="Phone Number">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputhomecountry">Home Country</label>
+                      <select name="inputCountry" [(ngModel)]="candidate.countrY_ID" id="inputCountry" class="form-control">
+                        <option *ngFor="let country of countries" value="{{country.id}}" selected>{{country.countryName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputHighschoolname">High School Name</label>
+                      <input type="text" id="inputHighschoolname" name="inputHighschoolname" [(ngModel)]="candidate.highSchoolName"
+                        class="form-control" placeholder="High School Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputHighschoolcity">High School City</label>
+                      <select name="inputHighschoolcity" [(ngModel)]="candidate.highSchoolCity" id="inputHighschoolcity" class="form-control">
+                        <option *ngFor="let province of provinces" value="{{province.id}}" selected>{{province.provinceName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputHighschool">High School Graduate Year</label>
+                      <input type="number" id="inputHighschoolname" name="inputHighschoolname" 
+                        class="form-control" min="1900" max="2099" step="1" value="{{candidate.graduateYear}}">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputEducation">Education</label>
+                      <select id="inputEducation" name="inputEducation" [(ngModel)]="candidate.educatioN_ID" class="form-control">
+                        <option *ngFor="let education of educations" value="{{education.id}}" selected>{{education.educationName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputDocumentCode">Document Code</label>
+                      <input type="text" class="form-control" id='inputDocumentCode' name="inputDocumentCode"
+                        [(ngModel)]="candidate.documentCode" placeholder="Document Number"/>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputRegisterDate">Register Date</label>
+                      <input type="date" class="form-control" id="inputRegisterDate" name="inputRegisterDate"
+                        [(ngModel)]="candidate.registryDate" placeholder="Register Date">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCandidateType">Candidate Type</label>
+                      <select id="inputCandidateType" name="inputCandidateType" [(ngModel)]="candidate.typE_ID" class="form-control">
+                        <option *ngFor="let candidatetype of candidatetypes" value="{{candidatetype.id}}" selected>{{candidatetype.typeName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputFinalResult">Final Result</label>
+                      <select id="inputFinalResult" name="inputFinalResult" [(ngModel)]="candidate.finalResult" class="form-control">
+                        <option *ngFor="let final of finals" value="{{final.id}}" selected>{{final.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="text-block text-center my-3">
+                <p class="text-danger">{{message}}</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+              <button type="button" class="btn btn-primary" (click)="update(candidate.id)">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- delete -->
+    <div bsModal #modalDelete="bs-modal" class="modal fade" id="deleteCandidate" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Candidate</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger">Are you sure delete this Candidate {{candidate.lastName}} {{candidate.firstName}}?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" (click)="delete(candidate.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- document -->
+    <div bsModal #modalDocument="bs-modal" class="modal fade" id="documentCandidate" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Document Candidate</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card" ng-controller="UserEditCtrl">
+              <div class="card-body">
+                <form action="">
+                  <div class="row">
+                    <div class="col">
+                      <h4>Student Name: {{candidate.lastName}} {{candidate.firstName}}</h4>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col">
+                      <h4>Student ID: {{candidate.candidateId}}</h4>
+                    </div>
+                  </div>
+                  <div class="row mb-2" *ngFor="let document of documents">
+                    <div class="col-md-4">
+                      {{document.nameInEnglish}}
+                    </div>
+                    <div class="col-md-4">
+                      {{document.nameInVietnamese}}
+                    </div>
+                    <div class="col-md-1">
+                      <input type="checkbox" name="candidatedocument" id="candidatedocument" [checked]="document.id" (change)="changeStatus(candidatedocument.id,$event, document.id)">
+                    </div>
+                    <div class="col-md-3">
+                      <input type="text" name="candidatedocumentnote" id="candidatedocumentnote" [(ngModel)]="candidatedocument.note" class="form-control w-100">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+            <!-- <button type="button" class="btn btn-primary" (click)="updateCandidateDocument()">Save</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Details -->
+    <div bsModal #modalDetail="bs-modal" class="modal fade" id="detailCandidate" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Candidate Detail</h5>
+            <button type="button" class="close" (click)="close()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="#">
+            <div class="modal-body">
+              <div class="container">
+                <fieldset>
+                  <legend></legend>
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputStage">Stage</label>
+                      <select id="inputStage" name="inputStage" [(ngModel)]="candidate.stagE_ID" class="form-control" disabled>
+                        <option *ngFor="let row of stageDetails" [value]="row.id" selected>{{row.stageName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputSemester">Semester</label>
+                      <select id="inputSemester" name="inputSemester" [(ngModel)]="candidate.seM_ID"
+                        class="form-control" disabled>
+                        <option *ngFor="let semester of semesters" [value]="semester.id">{{semester.semesterName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputYear">Year</label>
+                      <select id="inputYear" name="inputYear" [(ngModel)]="candidate.yeaR_ID" class="form-control" disabled>
+                        <option *ngFor="let year of years" [value]="year.id" selected>{{year.yearName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-sm-6">
+                      <label for="inputCatalog">Catalog</label>
+                      <select id="inputCatalog" name="inputCatalog" [(ngModel)]="candidate.cataloG_ID" class="form-control" disabled>
+                        <option *ngFor="let catalog of catalogs" value="{{catalog.id}}" selected>{{catalog.beginYear}}
+                          - {{catalog.endYear}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputCandidateId">Candidate ID</label>
+                      <input type="text" class="form-control" id="inputCandidateId" name="inputCandidateId" [(ngModel)]="candidate.candidateId"
+                        placeholder="Candidate Number" readonly>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputFirstname">First Name</label>
+                      <input type="text" class="form-control" id="inputFirstname" name="inputFirstname" [(ngModel)]="candidate.firstName"
+                        placeholder="First Name" readonly>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputLastname">Last Name</label>
+                      <input type="text" class="form-control" id="inputLastname" name="inputLastname" [(ngModel)]="candidate.lastName"
+                        placeholder="Last Name" readonly>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputbirthday">Date Of Birth</label>
+                      <input type="date" class="form-control" id="inputbirthday" name="inputbirthday" [(ngModel)]="candidate.dateOfBirth" readonly>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputGender">Gender</label>
+                      <select id="inputGender" name="inputGender" [(ngModel)]="candidate.gender" class="form-control" disabled>
+                        <option *ngFor="let gender of genders" value="{{gender.id}}" selected>{{gender.name}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputMajor">Major</label>
+                      <select id="inputMajor" name="inputMajor" [(ngModel)]="candidate.majoR_ID" class="form-control" disabled>
+                        <option *ngFor="let major of majors" value="{{major.id}}" selected>{{major.majorName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail">Email</label>
+                      <input type="email" class="form-control" id="inputEmail" name="inputEmail" [(ngModel)]="candidate.email"
+                        placeholder="example@gmail.com" readonly>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputIDCard">ID Card</label>
+                      <input type="text" class="form-control" id="inputIDCard" name="inputIDCard" [(ngModel)]="candidate.cardId"
+                        placeholder="ID Card" readonly>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputIntake">Intake</label>
+                      <select id="inputIntake" name="inputIntake" [(ngModel)]="candidate.intakE_ID" class="form-control" disabled>
+                        <option *ngFor="let intake of intakes" value="{{intake.id}}" selected>{{intake.intakeName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCountryAddress">Address</label>
+                      <select (change)="changeCountry()" name="inputCountryAddress" [(ngModel)]="candidate.countryAddress" id="inputCountryAddress" class="form-control" disabled>
+                        <option *ngFor="let country of countries" value="{{country.id}}" selected>{{country.countryName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputProvince"></label>
+                      <select (change)="changeProvince()" name="inputProvince" [(ngModel)]="candidate.provinceAddress" id="inputProvince" class="form-control" disabled>
+                        <option *ngFor="let province of provinces" value="{{province.id}}" selected>{{province.provinceName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <select id="inputDistrict" name="inputDistrict" class="form-control" [(ngModel)]="candidate.districtAddress" disabled>
+                        <option *ngFor="let district of districts" value="{{district.id}}" selected>{{district.districtName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <input type="text" class="form-control" id="inputaddress" name="inputaddress" [(ngModel)]="candidate.homeAddress"
+                        placeholder="Home Number, Streets" readonly>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputPlaceofbirth">Place Of Birth</label>
+                      <input type="text" class="form-control" id="inputPlaceofbirth" name="inputPlaceofbirth"
+                        [(ngModel)]="candidate.placeOfBirth" placeholder="Hospital, Districts, City" readonly>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputMarialStatus">Marial Status</label>
+                      <select id="inputMarialStatus" name="inputMarialStatus" [(ngModel)]="candidate.maritalStatus" class="form-control" disabled>
+                        <option *ngFor="let marial of marialstatus" value="{{marial.id}}" selected>{{marial.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="">Phone Number</label>
+                      <input type="text" class="form-control" id="inputPhone" name="inputPhone" [(ngModel)]="candidate.phone"
+                        placeholder="Phone Number" readonly>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputhomecountry">Home Country</label>
+                      <select name="inputCountry" [(ngModel)]="candidate.countrY_ID" id="inputCountry" class="form-control" disabled>
+                        <option *ngFor="let country of countries" value="{{country.id}}" selected>{{country.countryName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputHighschoolname">High School Name</label>
+                      <input type="text" id="inputHighschoolname" name="inputHighschoolname" [(ngModel)]="candidate.highSchoolName"
+                        class="form-control" placeholder="High School Name" readonly>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputHighschoolcity">High School City</label>
+                      <select name="inputHighschoolcity" [(ngModel)]="candidate.highSchoolCity" id="inputHighschoolcity" class="form-control" disabled>
+                        <option *ngFor="let province of provinces" value="{{province.id}}" selected>{{province.provinceName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputHighschool">High School Graduate Year</label>
+                      <input type="number" id="inputHighschoolname" name="inputHighschoolname" 
+                        class="form-control" min="1900" max="2099" step="1" value="{{candidate.graduateYear}}" readonly>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputEducation">Education</label>
+                      <select id="inputEducation" name="inputEducation" [(ngModel)]="candidate.educatioN_ID" class="form-control" disabled>
+                        <option *ngFor="let education of educations" value="{{education.id}}" selected>{{education.educationName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputDocumentCode">Document Code</label>
+                      <input type="text" class="form-control" id='inputDocumentCode' name="inputDocumentCode"
+                        [(ngModel)]="candidate.documentCode" placeholder="Document Number" readonly/>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputRegisterDate">Register Date</label>
+                      <input type="date" class="form-control" id="inputRegisterDate" name="inputRegisterDate"
+                        [(ngModel)]="candidate.registryDate" placeholder="Register Date" readonly>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCandidateType">Candidate Type</label>
+                      <select id="inputCandidateType" name="inputCandidateType" [(ngModel)]="candidate.typE_ID" class="form-control" disabled>
+                        <option *ngFor="let candidatetype of candidatetypes" value="{{candidatetype.id}}" selected>{{candidatetype.typeName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputFinalResult">Final Result</label>
+                      <select id="inputFinalResult" name="inputFinalResult" [(ngModel)]="candidate.finalResult" class="form-control" disabled>
+                        <option *ngFor="let final of finals" value="{{final.id}}" selected>{{final.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-body w-100 table-responsive">
+    <form>
+      <div class="form-group row">
+        <label for="inputstagechoose" class="col-sm-2 col-form-label">
+          <h5>Stage Choose:</h5>
+        </label>
+        <div class="col-sm-3">
+          <select (change)="changeStage()" name="inputstagechoose" [(ngModel)]="allstage.id" id="inputstagechoose"
+            class="form-control">
+            <option *ngFor="let allstage of allstages" value="{{allstage.id}}" selected>{{allstage.stageName}}</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <table datatable class="table table-striped table-hover display">
+      <thead class="bg-color text-white">
+        <tr>
+          <th>No.</th>
+          <th>Candidate ID</th>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Date of Birth</th>
+          <th>Home Country</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of candidates; let i=index">
+          <th>{{i+1}}</th>
+          <td>{{row.candidateId}}</td>
+          <td>{{row.lastName}}</td>
+          <td>{{row.firstName}}</td>
+          <td>{{row.dateOfBirth}}</td>
+          <td>{{row.country.countryName}}</td>
+          <td>
+            <a href="#" (click)="ShowModalDetail($event,row.id)" class="text-warning">Detail</a> |
+            <a href="#" (click)="ShowModalEdit($event,row.id)">Edit</a> |
+            <a href="#" (click)="ShowModalDocument($event,row.id)" class="text-success">Document</a> |
+            <a href="#" (click)="ShowModalDelete($event,row.id)" class="text-danger">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- partial -->
+<!-- page-body-wrapper ends -->
